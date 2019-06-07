@@ -4,12 +4,11 @@ class KudoCli < Formula
   homepage "https://kudo.dev"
   url "https://github.com/kudobuilder/kudo/releases/download/v0.2.0/kudo_0.2.0_darwin_x86_64.tar.gz"
   version "0.2.0"
-  sha256 "ab65770605f053d6fad8381008be799425141c26d7e61105dee7a50aa8964558"
+  sha256 "85137b0b3a11559f813cd7b940bb5269d4c02d0b6c351f46941b8cf9f669e92c"
   
   depends_on "kubernetes-cli"
 
   def install
-    bin.install "manager"
     bin.install "kubectl-kudo"
   end
 end
