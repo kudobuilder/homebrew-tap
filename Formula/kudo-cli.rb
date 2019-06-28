@@ -2,9 +2,15 @@
 class KudoCli < Formula
   desc "Interact with KUDO via the kubectl plugin"
   homepage "https://kudo.dev"
-  url "https://github.com/kudobuilder/kudo/releases/download/v0.2.0/kudo_0.2.0_darwin_x86_64.tar.gz"
-  version "0.2.0"
-  sha256 "85137b0b3a11559f813cd7b940bb5269d4c02d0b6c351f46941b8cf9f669e92c"
+  version "0.3.0"
+
+  if OS.mac?
+    url "https://github.com/kudobuilder/kudo/releases/download/v0.3.0/kudo_0.3.0_darwin_x86_64.tar.gz"
+    sha256 "448847ec9b276d90b7a92a8237c9caf91f1b054964cee73e7c473db4e00fdd02"
+  elsif OS.linux?
+    url "https://github.com/kudobuilder/kudo/releases/download/v0.3.0/kudo_0.3.0_linux_x86_64.tar.gz"
+    sha256 "eb21126104b7b94016a0d6e648debb1ee104b5955f6ba90fbcbaa4cdf847a7a7"
+  end
   
   depends_on "kubernetes-cli"
 
