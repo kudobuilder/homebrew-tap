@@ -2,22 +2,22 @@
 class KudoCli < Formula
   desc "Interact with KUDO via the kubectl plugin"
   homepage "https://kudo.dev"
-  version "0.7.2"
+  version "0.7.3"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/kudobuilder/kudo/releases/download/v0.7.2/kudo_0.7.2_darwin_x86_64.tar.gz"
-    sha256 "41c6b39e9ce5da687f60b14d482f1b25fe531629f71d55bcb847421eb119a46c"
+    url "https://github.com/kudobuilder/kudo/releases/download/v0.7.3/kudo_0.7.3_darwin_x86_64.tar.gz"
+    sha256 "b240ce6c16014546014a5bcb65858a517486bcfcd360ba24dec1b111657a3ad4"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/kudobuilder/kudo/releases/download/v0.7.2/kudo_0.7.2_linux_x86_64.tar.gz"
-      sha256 "63d9dfdac2b912882c970d5c5504f8d2a7500e5eaaf1451a7f7ebd43b87283d9"
+      url "https://github.com/kudobuilder/kudo/releases/download/v0.7.3/kudo_0.7.3_linux_x86_64.tar.gz"
+      sha256 "73abf59062f8a4deebcc3338feb3aac580983b6c2ead8617e789bd2a447d2178"
     end
     if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
       else
-        url "https://github.com/kudobuilder/kudo/releases/download/v0.7.2/kudo_0.7.2_linux_armv6.tar.gz"
-        sha256 "95f3cca9705dfb9fab3be192755dbffe13a4affbfbbf302b0e544ef7ae41c462"
+        url "https://github.com/kudobuilder/kudo/releases/download/v0.7.3/kudo_0.7.3_linux_armv6.tar.gz"
+        sha256 "ade600a1db75571695db32c5e0562c5770fb9a569bcb74bef99c06ef88cbf993"
       end
     end
   end
