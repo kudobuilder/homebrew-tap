@@ -2,22 +2,22 @@
 class KuttlCli < Formula
   desc "Interact with KUTTL via the kubectl plugin"
   homepage "https://kudo.dev"
-  version "0.3.0"
+  version "0.4.0"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/kudobuilder/kuttl/releases/download/v0.3.0/kuttl_0.3.0_darwin_x86_64.tar.gz"
-    sha256 "91151bfb3f44a645634092355643718c8da0d8b86bb6f49a20ad1efd15d9ae8d"
+    url "https://github.com/kudobuilder/kuttl/releases/download/v0.4.0/kuttl_0.4.0_darwin_x86_64.tar.gz"
+    sha256 "d2bf88f9a7726d69c657f5e63a9a4bc4189f5f58accec556c4389232b5eb827c"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/kudobuilder/kuttl/releases/download/v0.3.0/kuttl_0.3.0_linux_x86_64.tar.gz"
-      sha256 "ae3947b7bf333be13a944c8d965debf10a6bc43ac485f822e76cb5a4eb35c598"
+      url "https://github.com/kudobuilder/kuttl/releases/download/v0.4.0/kuttl_0.4.0_linux_x86_64.tar.gz"
+      sha256 "947dbf0fb8ffcc8a5ea8346f2aa308e2e271743192331ac3f05cc8c4e90950e8"
     end
     if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
       else
-        url "https://github.com/kudobuilder/kuttl/releases/download/v0.3.0/kuttl_0.3.0_linux_armv6.tar.gz"
-        sha256 "9ede7eaaa8a8821cf45eba0fd989f81db579b1aeaa082697300f4641e88817ed"
+        url "https://github.com/kudobuilder/kuttl/releases/download/v0.4.0/kuttl_0.4.0_linux_armv6.tar.gz"
+        sha256 "dbc62118b3b42f957deeb4d9a3ee798e7c91e20d287afff228f6d4c9349a6aed"
       end
     end
   end
