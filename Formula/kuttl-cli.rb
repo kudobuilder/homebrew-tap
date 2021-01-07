@@ -2,26 +2,22 @@
 class KuttlCli < Formula
   desc "Interact with KUTTL via the kubectl plugin"
   homepage "https://kudo.dev"
-  version "0.7.2"
+  version "0.8.0"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/kudobuilder/kuttl/releases/download/v0.7.2/kuttl_0.7.2_darwin_x86_64.tar.gz"
-    sha256 "0bf5e4aa2c2281856375c05be5902f428fc604f3498fd97fd02e2b5e9c1c5717"
-  elsif OS.linux?
-    if Hardware::CPU.intel?
-      url "https://github.com/kudobuilder/kuttl/releases/download/v0.7.2/kuttl_0.7.2_linux_x86_64.tar.gz"
-      sha256 "e03c37b04b13c13868de164a657b034ef5973cbdbc89d61f0057f3e71d974c3b"
-    end
-    if Hardware::CPU.arm?
-      if Hardware::CPU.is_64_bit?
-      else
-        url "https://github.com/kudobuilder/kuttl/releases/download/v0.7.2/kuttl_0.7.2_linux_armv6.tar.gz"
-        sha256 "74aff953ef4102542290f45c29707881b88086cd2624d138fa37656dfda99c7d"
-      end
-    end
+    url "https://github.com/kudobuilder/kuttl/releases/download/v0.8.0/kuttl_0.8.0_darwin_x86_64.tar.gz"
+    sha256 "15019daff4338f9dea433e1da4c410e57a308cc3cfc18dac583e570d70c50a8d"
   end
-  
+  if OS.linux? && Hardware::CPU.intel?
+    url "https://github.com/kudobuilder/kuttl/releases/download/v0.8.0/kuttl_0.8.0_linux_x86_64.tar.gz"
+    sha256 "27bf340f1d05fe331cf139bf472e705a6a322f1947adba3ebf2ed80dff2435ed"
+  end
+  if OS.linux? && Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+    url "https://github.com/kudobuilder/kuttl/releases/download/v0.8.0/kuttl_0.8.0_linux_armv6.tar.gz"
+    sha256 "ed95b3b2fdf3e83616ba1f8847416f8744191622af407c29db71e0481fef9592"
+  end
+
   depends_on "kubernetes-cli"
 
   def install
