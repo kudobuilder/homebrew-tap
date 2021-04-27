@@ -5,24 +5,28 @@
 class KudoCli < Formula
   desc "Interact with KUDO via the kubectl plugin"
   homepage "https://kudo.dev"
-  version "0.18.2"
+  version "0.19.0"
   bottle :unneeded
 
-  if OS.mac?
-    url "https://github.com/kudobuilder/kudo/releases/download/v0.18.2/kudo_0.18.2_darwin_x86_64.tar.gz"
-    sha256 "66165a8e91f45d18eeb214871aea52a1c7b5f05f2a9c4fd53e210bdee113c4a3"
+  if OS.mac? && Hardware::CPU.intel?
+    url "https://github.com/kudobuilder/kudo/releases/download/v0.19.0/kudo_0.19.0_darwin_x86_64.tar.gz"
+    sha256 "748da044a16aa37dd03997d73d0bb2e6d3aee30c1c9d989472bcc02289e2612f"
+  end
+  if OS.mac? && Hardware::CPU.arm?
+    url "https://github.com/kudobuilder/kudo/releases/download/v0.19.0/kudo_0.19.0_darwin_arm64.tar.gz"
+    sha256 "bb9ef941052dc8a1c6c8fcb374f8c1a02519f74a03a170cfbfec459d146fba9e"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/kudobuilder/kudo/releases/download/v0.18.2/kudo_0.18.2_linux_x86_64.tar.gz"
-    sha256 "bfde845dcff2fbbe625852ed39b1580ba965256880837b98e30c7a4a6700ee11"
+    url "https://github.com/kudobuilder/kudo/releases/download/v0.19.0/kudo_0.19.0_linux_x86_64.tar.gz"
+    sha256 "a35f2fefbc3615cda98db236843ee38037d55f73970f911b43682211b52ca6d0"
   end
   if OS.linux? && Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-    url "https://github.com/kudobuilder/kudo/releases/download/v0.18.2/kudo_0.18.2_linux_armv6.tar.gz"
-    sha256 "ff5eb176386c46ab9ca2a7c940cb9089f4b95719cbbb4689ea6958ebf33a208e"
+    url "https://github.com/kudobuilder/kudo/releases/download/v0.19.0/kudo_0.19.0_linux_armv6.tar.gz"
+    sha256 "a1c92a4e16be2a2b7dc3b0b1512f5fc8df631df1eea7c4d1a55313eddaa952ae"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/kudobuilder/kudo/releases/download/v0.18.2/kudo_0.18.2_linux_arm64.tar.gz"
-    sha256 "8e83ae3289ab5e6ab307d5e17a1bf918dbdcbdad401ca08de665a11b00e6f0d8"
+    url "https://github.com/kudobuilder/kudo/releases/download/v0.19.0/kudo_0.19.0_linux_arm64.tar.gz"
+    sha256 "8c7ed02bba01165f0bb86f90ea5e8b675e5fe20fd3677b0b79399289a8db442e"
   end
 
   depends_on "kubernetes-cli"
