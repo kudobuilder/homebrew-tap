@@ -6,7 +6,6 @@ class KuttlCli < Formula
   desc "Interact with KUTTL via the kubectl plugin"
   homepage "https://kuttl.dev"
   version "0.11.1"
-  bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?

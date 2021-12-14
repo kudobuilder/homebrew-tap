@@ -6,7 +6,6 @@ class KudoCli < Formula
   desc "Interact with KUDO via the kubectl plugin"
   homepage "https://kudo.dev"
   version "0.19.0"
-  bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
     url "https://github.com/kudobuilder/kudo/releases/download/v0.19.0/kudo_0.19.0_darwin_x86_64.tar.gz"
