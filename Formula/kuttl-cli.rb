@@ -5,22 +5,22 @@
 class KuttlCli < Formula
   desc "Interact with KUTTL via the kubectl plugin"
   homepage "https://github.com/kudobuilder/kuttl"
-  version "0.24.0"
+  version "0.25.0"
 
   depends_on "kubernetes-cli"
 
   on_macos do
     on_intel do
-      url "https://github.com/kudobuilder/kuttl/releases/download/v0.24.0/kuttl_0.24.0_darwin_x86_64.tar.gz"
-      sha256 "6abafac966f70c80bd1c47014b69dd9f5924d248190ae3567c25dfb32eda3321"
+      url "https://github.com/kudobuilder/kuttl/releases/download/v0.25.0/kuttl_0.25.0_darwin_x86_64.tar.gz"
+      sha256 "f9ab06b4ddcf2a2a6e2005b217089849fc4625a6485f24effb306696bc5d189f"
 
       def install
         bin.install "kubectl-kuttl"
       end
     end
     on_arm do
-      url "https://github.com/kudobuilder/kuttl/releases/download/v0.24.0/kuttl_0.24.0_darwin_arm64.tar.gz"
-      sha256 "1c082e11a3b91933c9ae87d506902a6b42393c0801e21edc3b3db603b464c5db"
+      url "https://github.com/kudobuilder/kuttl/releases/download/v0.25.0/kuttl_0.25.0_darwin_arm64.tar.gz"
+      sha256 "1350dc5b06a4de5723055ffadca0dfb9d6bfd26988d33fd6d3b445d256b242d0"
 
       def install
         bin.install "kubectl-kuttl"
@@ -31,8 +31,8 @@ class KuttlCli < Formula
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/kudobuilder/kuttl/releases/download/v0.24.0/kuttl_0.24.0_linux_x86_64.tar.gz"
-        sha256 "9451186fd17517a58ac5c498c1b7761fd117e91db3c7543d437554fab7452294"
+        url "https://github.com/kudobuilder/kuttl/releases/download/v0.25.0/kuttl_0.25.0_linux_x86_64.tar.gz"
+        sha256 "11329501df6448610f4813242dfafeba9a1a81fa1f1d90abd855eaf6e06ab779"
 
         def install
           bin.install "kubectl-kuttl"
@@ -41,8 +41,8 @@ class KuttlCli < Formula
     end
     on_arm do
       if !Hardware::CPU.is_64_bit?
-        url "https://github.com/kudobuilder/kuttl/releases/download/v0.24.0/kuttl_0.24.0_linux_armv6.tar.gz"
-        sha256 "daa45df3fb329165ff6bc9810a0b7c20c6f10f8405e8c292949adb139fc3c4cd"
+        url "https://github.com/kudobuilder/kuttl/releases/download/v0.25.0/kuttl_0.25.0_linux_armv6.tar.gz"
+        sha256 "98ef4ae901596073c761adb6223da0eac9e5f33db3e3712423ff61f825e23386"
 
         def install
           bin.install "kubectl-kuttl"
@@ -51,8 +51,8 @@ class KuttlCli < Formula
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/kudobuilder/kuttl/releases/download/v0.24.0/kuttl_0.24.0_linux_arm64.tar.gz"
-        sha256 "cec59f7df802258171279cb0e191a562018879327abbbca90ced14fe94041521"
+        url "https://github.com/kudobuilder/kuttl/releases/download/v0.25.0/kuttl_0.25.0_linux_arm64.tar.gz"
+        sha256 "0000a9cd9ae70ed1fccf7a83d8580d0c066f69dc12ee826ed5dc25e1a0b6862d"
 
         def install
           bin.install "kubectl-kuttl"
